@@ -6,3 +6,4 @@ D:\Reposit\Coursework\CourseWork\CourseWork\obj\Debug\CourseWork.Properties.Reso
 D:\Reposit\Coursework\CourseWork\CourseWork\obj\Debug\CourseWork.csproj.GenerateResource.Cache
 D:\Reposit\Coursework\CourseWork\CourseWork\obj\Debug\CourseWork.exe
 D:\Reposit\Coursework\CourseWork\CourseWork\obj\Debug\CourseWork.pdb
+D:\Reposit\Coursework\CourseWork\CourseWork\obj\Debug\kurs_Test.LoginForm.resources
