@@ -1,1 +1,8 @@
 D:\Reposit\Coursework\CourseWork\CourseWork\bin\Debug\CourseWork.exe.config
+D:\Reposit\Coursework\CourseWork\CourseWork\bin\Debug\CourseWork.exe
+D:\Reposit\Coursework\CourseWork\CourseWork\bin\Debug\CourseWork.pdb
+D:\Reposit\Coursework\CourseWork\CourseWork\obj\Debug\CourseWork.Main.resources
+D:\Reposit\Coursework\CourseWork\CourseWork\obj\Debug\CourseWork.Properties.Resources.resources
+D:\Reposit\Coursework\CourseWork\CourseWork\obj\Debug\CourseWork.csproj.GenerateResource.Cache
+D:\Reposit\Coursework\CourseWork\CourseWork\obj\Debug\CourseWork.exe
+D:\Reposit\Coursework\CourseWork\CourseWork\obj\Debug\CourseWork.pdb
