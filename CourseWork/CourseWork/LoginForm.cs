@@ -22,7 +22,6 @@ namespace kurs_Test
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-
             SqlConnection conn = new SqlConnection("Server=.\\SQLEXPRESS;Database=KurstTest;Trusted_Connection=True;");
             conn.Open();
             SqlCommand cmd = new SqlCommand("SELECT Login, Password FROM [User] WHERE Login='" + textBox1.Text + "' AND Password='" + textBox2.Text + "'", conn);
@@ -38,11 +37,8 @@ namespace kurs_Test
                 UserID = reader.GetString(0);
                 this.Close();
             }
-
             reader.Close();
             conn.Close();
-
-
         }
     }
 }

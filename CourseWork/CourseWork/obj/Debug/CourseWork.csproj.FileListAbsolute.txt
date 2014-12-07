@@ -7,3 +7,5 @@ D:\Reposit\Coursework\CourseWork\CourseWork\obj\Debug\CourseWork.csproj.Generate
 D:\Reposit\Coursework\CourseWork\CourseWork\obj\Debug\CourseWork.exe
 D:\Reposit\Coursework\CourseWork\CourseWork\obj\Debug\CourseWork.pdb
 D:\Reposit\Coursework\CourseWork\CourseWork\obj\Debug\kurs_Test.LoginForm.resources
+D:\Reposit\Coursework\CourseWork\CourseWork\obj\Debug\CourseWork.csprojResolveAssemblyReference.cache
+D:\Reposit\Coursework\CourseWork\CourseWork\obj\Debug\kurs_Test.Empl.resources

@@ -50,5 +50,11 @@ namespace CourseWork
             this.Close();
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var employee = new Empl(UserId);
+            employee.ShowDialog();
+        }
+
     }
 }
