@@ -67,5 +67,11 @@ namespace CourseWork
             wplace.ShowDialog();
         }
 
+        private void button5_Click(object sender, EventArgs e)
+        {
+            var tobject = new TechObj(UserId);
+            tobject.ShowDialog();
+        }
+
     }
 }

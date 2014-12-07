@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmeRep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmeRep.Designer.cs">
+      <DependentUpon>EmeRep.cs</DependentUpon>
+    </Compile>
     <Compile Include="Empl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,14 +74,29 @@
     <Compile Include="Needs.Designer.cs">
       <DependentUpon>Needs.cs</DependentUpon>
     </Compile>
+    <Compile Include="PlanRep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlanRep.Designer.cs">
+      <DependentUpon>PlanRep.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TechObj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TechObj.Designer.cs">
+      <DependentUpon>TechObj.cs</DependentUpon>
+    </Compile>
     <Compile Include="Workplace.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Workplace.Designer.cs">
       <DependentUpon>Workplace.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="EmeRep.resx">
+      <DependentUpon>EmeRep.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Empl.resx">
       <DependentUpon>Empl.cs</DependentUpon>
     </EmbeddedResource>
@@ -88,6 +109,9 @@
     <EmbeddedResource Include="Needs.resx">
       <DependentUpon>Needs.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PlanRep.resx">
+      <DependentUpon>PlanRep.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -97,6 +121,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TechObj.resx">
+      <DependentUpon>TechObj.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Workplace.resx">
       <DependentUpon>Workplace.cs</DependentUpon>
     </EmbeddedResource>
