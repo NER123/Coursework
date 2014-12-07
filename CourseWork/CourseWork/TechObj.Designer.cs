@@ -74,7 +74,7 @@
             this.Name = "TechObj";
             this.Text = "TechObj";
             this.ResumeLayout(false);
-
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
         }
 
         #endregion

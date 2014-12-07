@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calc.Designer.cs">
+      <DependentUpon>Calc.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmeRep.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +101,9 @@
     <Compile Include="Workplace.Designer.cs">
       <DependentUpon>Workplace.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Calc.resx">
+      <DependentUpon>Calc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EmeRep.resx">
       <DependentUpon>EmeRep.cs</DependentUpon>
     </EmbeddedResource>

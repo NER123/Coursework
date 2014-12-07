@@ -65,16 +65,6 @@ namespace kurs_Test
         {
             try
             {
-                // int index = dataGridView1.CurrentCell.RowIndex;
-                // object test = _ds.Tables[0].Rows[index][3, DataRowVersion.Original];
-                //  string test2 = Convert.ToString(test);
-                //  test2 = test2.Replace(" ", string.Empty);
-                //  SqlCommand cmd = new SqlCommand("DELETE FROM [Needs] WHERE ID='" + test2 + "'", _conn);
-                // cmd.ExecuteNonQuery();
-
-                //    int index = dataGridView1.CurrentCell.RowIndex;
-                //     dataGridView1.Rows.RemoveAt(index);
-
                 _scbuild = new SqlCommandBuilder(_adapt);
                 _adapt.Update(_ds, "Person Details");
             }

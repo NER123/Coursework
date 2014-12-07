@@ -73,5 +73,11 @@ namespace CourseWork
             tobject.ShowDialog();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var calculation = new Calc(UserId);
+            calculation.ShowDialog();
+        }
+
     }
 }
