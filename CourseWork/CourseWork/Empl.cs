@@ -50,12 +50,18 @@ namespace kurs_Test
 
         private void DeletingRow(object sender, DataGridViewRowEventArgs e)
         {
-            int index = dataGridView1.CurrentCell.RowIndex;
-            object test = _ds.Tables[0].Rows[index][4, DataRowVersion.Original];
-            string test2 = Convert.ToString(test);
-            test2 = test2.Replace(" ", string.Empty);
-            SqlCommand cmd = new SqlCommand("DELETE FROM [Empl] WHERE ID='" + test2 + "'", _conn);
-            cmd.ExecuteNonQuery();
+            try
+            {
+                int index = dataGridView1.CurrentCell.RowIndex;
+                dataGridView1.Rows.RemoveAt(index);
+
+                _scbuild = new SqlCommandBuilder(_adapt);
+                _adapt.Update(_ds, "Person Details");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error \n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
