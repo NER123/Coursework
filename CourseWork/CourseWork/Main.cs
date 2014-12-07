@@ -56,5 +56,11 @@ namespace CourseWork
             employee.ShowDialog();
         }
 
+        private void button6_Click(object sender, EventArgs e)
+        {
+            var need = new Needs(UserId);
+            need.ShowDialog();
+        }
+
     }
 }
