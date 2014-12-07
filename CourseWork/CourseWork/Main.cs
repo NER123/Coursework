@@ -27,7 +27,6 @@ namespace CourseWork
             login.ShowDialog();
         }
 
-
         private void _loginFormClosing(object sender, EventArgs e)
         {
             LoginForm login = sender as LoginForm;
@@ -60,6 +59,12 @@ namespace CourseWork
         {
             var need = new Needs(UserId);
             need.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var wplace = new Workplace(UserId);
+            wplace.ShowDialog();
         }
 
     }
