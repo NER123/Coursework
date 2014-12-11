@@ -80,7 +80,11 @@ namespace kurs_Test
             {
                 Guid ID = Guid.NewGuid();
                 string ID_string = ID.ToString();
-                SqlCommand cmd = new SqlCommand("INSERT INTO [EmeRep] (UserID, Cost, StartDate, EndDate, Comm, ID) VALUES ('" + _userId + "'," + Convert.ToInt32(textBox3.Text) + ",'" + dateTimePicker1.Value.Date + "','" + dateTimePicker2.Value.Date + "','" + textBox4.Text + "','" + ID_string + "')", _conn);
+                SqlCommand cmd = new SqlCommand("INSERT INTO [EmeRep] (UserID, Cost, StartDate, EndDate, Comm, ID) VALUES ('"
+                    + _userId + "'," + Convert.ToInt32(textBox3.Text) + ",'" +
+                    dateTimePicker1.Value.Date.Month + "." + dateTimePicker1.Value.Day + "." + dateTimePicker1.Value.Year + "','" +
+                    dateTimePicker2.Value.Date.Month + "." + dateTimePicker2.Value.Day + "." + dateTimePicker2.Value.Year + "','" +
+                    textBox4.Text + "','" + ID_string + "')", _conn);
                 cmd.ExecuteNonQuery();
                 _adapt = new SqlDataAdapter("SELECT Cost, StartDate, EndDate, Comm, ID  FROM [EmeRep] WHERE UserID ='" + _userId + "'", _conn);
                 _ds = new DataSet();
