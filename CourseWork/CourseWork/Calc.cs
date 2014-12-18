@@ -11,7 +11,6 @@ using System.Windows.Forms;
 
 namespace kurs_Test
 {
-
     public partial class Calc : Form
     {
 
@@ -33,7 +32,6 @@ namespace kurs_Test
             textBox2.ReadOnly = true;
             textBox3.Font = new Font(textBox3.Font.FontFamily, 16);            
         }
-
 
         private void CalcLoad()
         {
@@ -105,16 +103,16 @@ namespace kurs_Test
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int Calculation = Convert.ToInt32(textBox1.Text) - Convert.ToInt32(textBox2.Text);
+            int calculation = Convert.ToInt32(textBox1.Text) - Convert.ToInt32(textBox2.Text);
 
-            if (Calculation < 0)
+            if (calculation < 0)
                 textBox3.BackColor = Color.DarkRed;
             else
             {
                 textBox3.BackColor = Color.Green;
             }
 
-            textBox3.Text = Convert.ToString(Calculation);
+            textBox3.Text = Convert.ToString(calculation);
             
         }
 

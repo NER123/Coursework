@@ -14,6 +14,7 @@ namespace CourseWork
     public partial class Main : Form
     {
         public string UserId;
+        public int UserType;
 
         public Main()
         {
@@ -24,6 +25,7 @@ namespace CourseWork
         {
             var login = new LoginForm();
             login.Closing += _loginFormClosing;
+            login.FormClosing += _loginFormClosing;
             login.ShowDialog();
         }
 
@@ -39,8 +41,9 @@ namespace CourseWork
             {
                 this.Close();
             }
-            UserId = login.UserID;
-            label1.Text = login.UserID;
+            UserId = login.UserId;
+            UserType = login.UserType;
+            label1.Text = login.UserId;
             label2.Text = "Добро пожаловать в Курсовая_Работа_Тест.";
         }
 
@@ -69,14 +72,56 @@ namespace CourseWork
 
         private void button5_Click(object sender, EventArgs e)
         {
-            var tobject = new TechObj(UserId);
-            tobject.ShowDialog();
+                var tobject = new TechObj(UserId);
+                tobject.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var calculation = new Calc(UserId);
-            calculation.ShowDialog();
+            if (UserType == 2)
+            {
+                const string message = "Данная опция не доступна при тестовом аккаунте .";
+                const string caption = "Ограничения.";
+                const MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(message, caption, buttons);
+            }
+            else
+            {
+                var calculation = new Calc(UserId);
+                calculation.ShowDialog();
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (UserType == 0)
+            {
+                var registr = new Registr();
+                registr.ShowDialog();
+            }
+            else
+            {
+                const string message = "Данная опция доступна только пользователям с правами админа.";
+                const string caption = "Ограничения.";
+                const MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(message, caption, buttons);
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (UserType == 2)
+            {
+                const string message = "Данная опция не доступна при тестовом аккаунте .";
+                const string caption = "Ограничения.";
+                const MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(message, caption, buttons);
+            }
+            else
+            {
+                var miniU = new MiniUser(UserId);
+                miniU.ShowDialog();
+            }
         }
 
     }
