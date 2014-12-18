@@ -15,6 +15,7 @@ namespace CourseWork
     {
         public string UserId;
         public int UserType;
+        public UserRights UR = new UserRights();
 
         public Main()
         {
@@ -41,8 +42,11 @@ namespace CourseWork
             {
                 this.Close();
             }
+
             UserId = login.UserId;
             UserType = login.UserType;
+            UR = login.UR;
+
             label1.Text = login.UserId;
             label2.Text = "Добро пожаловать в Курсовая_Работа_Тест.";
         }
@@ -54,26 +58,66 @@ namespace CourseWork
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var employee = new Empl(UserId);
-            employee.ShowDialog();
+            if (UR.Empl)
+            {
+                var employee = new Empl(UserId);
+                employee.ShowDialog();
+            }
+            else
+            {
+                const string message = "У вас нет прав.";
+                const string caption = "Ограничения.";
+                const MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(message, caption, buttons);
+            }
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            var need = new Needs(UserId);
-            need.ShowDialog();
+            if (UR.Needs)
+            {
+                var need = new Needs(UserId);
+                need.ShowDialog();
+            }
+            else
+            {
+                const string message = "У вас нет прав.";
+                const string caption = "Ограничения.";
+                const MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(message, caption, buttons);
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            var wplace = new Workplace(UserId);
-            wplace.ShowDialog();
+            if (UR.WorkPlace)
+            {
+                var wplace = new Workplace(UserId);
+                wplace.ShowDialog();
+            }
+            else
+            {
+                const string message = "У вас нет прав.";
+                const string caption = "Ограничения.";
+                const MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(message, caption, buttons);
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
+            if (UR.TechObj)
+            {
                 var tobject = new TechObj(UserId);
                 tobject.ShowDialog();
+            }
+            else
+            {
+                const string message = "У вас нет прав.";
+                const string caption = "Ограничения.";
+                const MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(message, caption, buttons);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

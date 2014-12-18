@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -7,6 +8,19 @@ using System.Threading.Tasks;
 
 namespace CourseWork
 {
+    /////////////////////////////////////////////////////////////////////////
+    public class UserRights
+    {
+      public bool Empl;
+      public bool WorkPlace;
+      public bool TechObj;
+      public bool Needs;
+
+       public UserRights()
+      { }
+    }
+
+    /////////////////////////////////////////////////////////////////////////
     public class Funcs
     {
         public static int OneYearPlan(string id, SqlConnection _conn)
