@@ -153,12 +153,16 @@ namespace kurs_Test
         {
             try
             {
+                string delete = "";
                 var cmds = new SqlCommand("SELECT Rent, Repair, ID FROM [WorkPlacePay] WHERE UserID ='" + _userId + "'", _conn);
                 var reader = cmds.ExecuteReader();
                 reader.Read();
 
                 bool has = reader.HasRows;
-                string delete = reader.GetString(2);
+
+                if (has)
+                    delete = reader.GetString(2);
+
                 reader.Close();
 
                 if (has)
