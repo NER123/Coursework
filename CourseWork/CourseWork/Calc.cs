@@ -109,17 +109,31 @@ namespace kurs_Test
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int calculation = Convert.ToInt32(textBox1.Text) - Convert.ToInt32(textBox2.Text);
-
-            if (calculation < 0)
-                textBox3.BackColor = Color.DarkRed;
-            else
+            try
             {
-                textBox3.BackColor = Color.Green;
-            }
+                int calculation = 0;
 
-            textBox3.Text = Convert.ToString(calculation);
-            
+                if (textBox1.Text != string.Empty)
+                     calculation = Convert.ToInt32(textBox1.Text) - Convert.ToInt32(textBox2.Text);
+                else
+                {
+                    MessageBox.Show("Введите прогнозируемую прибыль", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                if (calculation < 0)
+                    textBox3.BackColor = Color.DarkRed;
+                else
+                {
+                    textBox3.BackColor = Color.Green;
+                }
+
+                textBox3.Text = Convert.ToString(calculation);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error \n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)

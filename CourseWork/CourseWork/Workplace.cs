@@ -168,7 +168,7 @@ namespace kurs_Test
                 if (has)
                 {
                     SqlCommand cmdz =
-                        new SqlCommand("DELETE FROM [WorkPlacePayPlus] WHERE ID='" + delete + "'", _conn);
+                        new SqlCommand("DELETE FROM [WorkPlacePay] WHERE ID='" + delete + "'", _conn);
                     cmdz.ExecuteNonQuery();
                 }
 
