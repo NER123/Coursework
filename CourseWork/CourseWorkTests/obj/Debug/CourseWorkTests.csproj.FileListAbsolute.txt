@@ -1,0 +1,7 @@
+D:\Reposit\Coursework\CourseWork\CourseWorkTests\bin\Debug\CourseWorkTests.dll
+D:\Reposit\Coursework\CourseWork\CourseWorkTests\bin\Debug\CourseWorkTests.pdb
+D:\Reposit\Coursework\CourseWork\CourseWorkTests\bin\Debug\CourseWork.exe
+D:\Reposit\Coursework\CourseWork\CourseWorkTests\bin\Debug\CourseWork.pdb
+D:\Reposit\Coursework\CourseWork\CourseWorkTests\obj\Debug\CourseWorkTests.csprojResolveAssemblyReference.cache
+D:\Reposit\Coursework\CourseWork\CourseWorkTests\obj\Debug\CourseWorkTests.dll
+D:\Reposit\Coursework\CourseWork\CourseWorkTests\obj\Debug\CourseWorkTests.pdb

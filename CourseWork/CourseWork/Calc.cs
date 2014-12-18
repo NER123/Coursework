@@ -38,58 +38,64 @@ namespace kurs_Test
             try
             {
                 this.Closing += FormClos;
-                int summ = 0;
-                int temporate = 0;
 
                 _conn = new SqlConnection("Server=.\\SQLEXPRESS;Database=KurstTest;Trusted_Connection=True;");
                 _conn.Open();
+           
 
-                var cmds = new SqlCommand("SELECT SUM(Pay) AS Total FROM [Empl] WHERE UserID ='" + _userId + "'", _conn);
-                var reader = cmds.ExecuteReader();
-
-                reader.Read();
-
-                if (reader.HasRows)
-                    temporate = reader.GetInt32(0)*12;
-        
-                reader.Close();
-
-                summ += temporate;
-                chart1.Series["Costs"].Points.AddXY("Зарплата",temporate);  
-
-                cmds = new SqlCommand("SELECT Rent, Repair FROM [WorkPlacePay] WHERE UserID ='" + _userId + "'", _conn);
-                reader = cmds.ExecuteReader();
-
-                reader.Read();
-
-                if (reader.HasRows)
-                    temporate = reader.GetInt32(0) * 12 + reader.GetInt32(1); 
-
-                reader.Close();
-
-                summ += temporate;
-                chart1.Series["Costs"].Points.AddXY("Рабочее место", temporate);  
-
-                cmds = new SqlCommand("SELECT Cost, PerYear FROM [PlanRep] WHERE UserID ='" + _userId + "'", _conn);
-                reader = cmds.ExecuteReader();
-                temporate = 0;
-
-                if (reader.HasRows)
-                    while (reader.Read())
-                        temporate += reader.GetInt32(0) * reader.GetInt32(1)/12 ;
-
-                reader.Close();
-
-                summ += temporate;
-                chart1.Series["Costs"].Points.AddXY("Плановый почин", temporate);  
-
-                textBox2.Text = Convert.ToString(summ);
+                textBox2.Text = Convert.ToString(OneYearPlan(_userId));
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error \n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }     
+        }
+
+        private int OneYearPlan(string id)
+        {
+            int summ = 0;
+            int temporate = 0;
+
+            var cmds = new SqlCommand("SELECT SUM(Pay) AS Total FROM [Empl] WHERE UserID ='" + id + "'", _conn);
+            var reader = cmds.ExecuteReader();
+
+            reader.Read();
+
+            if (reader.HasRows)
+                temporate = reader.GetInt32(0) * 12;
+
+            reader.Close();
+
+            summ += temporate;
+            chart1.Series["Costs"].Points.AddXY("Зарплата", temporate);
+
+            cmds = new SqlCommand("SELECT Rent, Repair FROM [WorkPlacePay] WHERE UserID ='" + id + "'", _conn);
+            reader = cmds.ExecuteReader();
+
+            reader.Read();
+
+            if (reader.HasRows)
+                temporate = reader.GetInt32(0) * 12 + reader.GetInt32(1);
+             reader.Close();
+
+            summ += temporate;
+            chart1.Series["Costs"].Points.AddXY("Рабочее место", temporate);
+
+            cmds = new SqlCommand("SELECT Cost, PerYear FROM [PlanRep] WHERE UserID ='" + id + "'", _conn);
+            reader = cmds.ExecuteReader();
+            temporate = 0;
+
+            if (reader.HasRows)
+                while (reader.Read())
+                    temporate += reader.GetInt32(0) * reader.GetInt32(1) / 12;
+
+            reader.Close();
+
+            summ += temporate;
+            chart1.Series["Costs"].Points.AddXY("Плановый почин", temporate);  
+
+            return summ;
+        }
 
         private void FormClos(object sender, CancelEventArgs e)
         {

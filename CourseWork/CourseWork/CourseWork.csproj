@@ -63,6 +63,7 @@
     <Compile Include="Empl.Designer.cs">
       <DependentUpon>Empl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Funcs.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
